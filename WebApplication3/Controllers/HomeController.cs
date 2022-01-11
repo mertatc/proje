@@ -9,11 +9,11 @@ namespace WebApplication3.Controllers
 {
     public class HomeController : Controller
     {
-        DataContext context = new DataContext();
+        DataContext _context = new DataContext();
         // GET: Home
         public ActionResult Index()
         {
-            return View();
+            return View(_context.Products.ToList());
         }
         public ActionResult Details()
         {
