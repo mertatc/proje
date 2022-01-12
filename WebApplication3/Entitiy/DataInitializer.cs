@@ -19,10 +19,10 @@ namespace WebApplication3.Entitiy
                 new Category(){Name="Telefon", Description="Telefon Ürünleri"},
                 new Category(){Name="Beyaz Eşya", Description="Beyaz Eşya Ürünleri"},
             };
-            foreach (var kategori in kategoriler)
-            {
-                context.Categories.Add(kategori);
-            }
+                foreach (var kategori in kategoriler)
+                {
+                    context.Categories.Add(kategori);
+                }
             context.SaveChanges();
 
             var urunler = new List<Product>()
@@ -36,6 +36,11 @@ namespace WebApplication3.Entitiy
                 new Product(){Name = "dolap", Description="herkesin var",Price=5600, Stock=1200,IsApproved=true,CategoryId=3,IsHome=true},
                 new Product(){Name = "fırın", Description="yeemk pişir",Price=5600, Stock=1200,IsApproved=true,CategoryId=3,IsHome=true},
             };
+            foreach (var urun in urunler)
+            {
+                context.Products.Add(urun);
+            }
+            context.SaveChanges();
 
             base.Seed(context);
         }
