@@ -18,25 +18,30 @@
 </div>
 
 <div class="row">
-    <div class="col-md-4">
+
+  
         @foreach (var urun in Model)
         {
-            <div class="card">
-                <img class="card-img-top" src="holder.js/100px160/" alt="@urun.Name">
-                <div class="card-body">
-                    <h4 class="card-title">
-                        <a href="/Home/Details/@urun.Id"> @urun.Name</a>
-                    </h4>
-                    <p class="card-text">@urun.Description</p>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">@urun.Price</small>
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="holder.js/100px160/" alt="@urun.Name">
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="/Home/Details/@urun.Id"> @urun.Name</a>
+                        </h4>
+                        <p class="card-text">@urun.Description</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">@urun.Price</small>
+                    </div>
                 </div>
             </div>
         }
-
-
     </div>
+    
+
+
 
 </div>
+    
 
