@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace WebApplication3.Entitiy
+namespace WebApplication3.Models
 {
-    public class Product
+    public class ProductModel
     {
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public double Price { get; set; }
         public int Stock { get; set; }
-       // public string Image { get; set; }
+        // public string İmage { get; set; }
 
 
 
@@ -21,6 +21,5 @@ namespace WebApplication3.Entitiy
 
 
         public int CategoryId { get; set; }
-        public Category Category { get; set; }
     }
 }
