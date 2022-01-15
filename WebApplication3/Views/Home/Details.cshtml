@@ -6,7 +6,7 @@
     ViewBag.Title = "Details";
 }
 
-<div class="container pb-5">
+<div id="product-details" class="container pb-5">
     <div class="row">
 
         <div class="col-md-6">
@@ -20,7 +20,15 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <span class="badge badge-primary">In Stock</span>
+                    @if (Model.IsApproved)
+                    {
+                        <span class="badge badge-primary">Mevcur</span>
+                    }
+                    else
+                    {
+                        <span class="badge badge-danger">Kalmadı</span>
+                    }
+                    
                     <span class="product-number">#2365656</span>
                 </div>
             </div>

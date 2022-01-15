@@ -29,9 +29,9 @@ namespace WebApplication3.Controllers
 
             return View(urunler);
         }
-        public ActionResult Details(int id)
+        public ActionResult Details(int ıd)
         {
-            return View(_context.Products.Where(i => i.Id== id).FirstOrDefault());
+            return View(_context.Products.Where(i => i.Id== ıd).FirstOrDefault());
         }
         public ActionResult List()
         {
