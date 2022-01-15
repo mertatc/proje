@@ -52,7 +52,7 @@ namespace WebApplication3.Controllers
         }
         public PartialViewResult GetCategories()
         {
-            return PertialView(_context.Categories.ToList());
+            return PartialView(_context.Categories.ToList());
         }
     }
 }
