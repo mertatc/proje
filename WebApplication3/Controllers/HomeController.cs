@@ -35,7 +35,20 @@ namespace WebApplication3.Controllers
         }
         public ActionResult List()
         {
-            return View(_context.Products.Where(i=> i.IsApproved).ToList());
+            var urunler = _context.Products.Where(i => i.IsApproved).Select(i => new ProductModel()
+            {
+                Id = i.Id,
+                Name = i.Name,
+                Description = i.Description.Length > 50 ? i.Description.Substring(0, 47) + "..." : i.Description,
+                Price = i.Price,
+                Stock = i.Stock,
+                //Image = i.Image==null?"1.jpg":i.Image , 
+                CategoryId = i.CategoryId
+
+
+            }).ToList();
+
+            return View(urunler);
         }
     }
 }
