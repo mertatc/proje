@@ -5,9 +5,9 @@
 
     @foreach (var urun in Model)
     {
-        <div class="col-md-4 mb-2">
+        <div class="col-md-4 mb-3">
             <div class="card">
-                <img class="card-img-top" src="holder.js/100px160/" alt="@urun.Name">
+                <img class="card-img-top" src="holder.js/100px160/" alt="@urun.Name"> <!-- src="/Upload/(et işareti)urun.Image" olması lazım-->
                 <div class="card-body">
                     <h4 class="card-title">
                         <a href="/Home/Details/@urun.Id"> @urun.Name</a>
@@ -18,9 +18,13 @@
                 </div>
                 <div class="card-footer">
                     <small class="text-muted product-price">
-                        <i class="fas fa-lira-sign" style="font-size: 48px;"></i>
+                        <i class="fas fa-lira-sign" style="font-size: 17px;"></i>
                         @urun.Price
                     </small>
+                    <a href="/Home/Details/@urun.Id" class="btn btn-primary btn-sm float-rigth">
+                        <i class="fas fa-book-open" style="font-size: 18px;"></i>
+                        Ürünü İncele
+                    </a>
                 </div>
             </div>
         </div>
