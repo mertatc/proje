@@ -29,9 +29,9 @@ namespace WebApplication3.Controllers
 
             return View(urunler);
         }
-        public ActionResult Details(int ıd)
+        public ActionResult Details(int id)
         {
-            return View(_context.Products.Where(i => i.Id== ıd).FirstOrDefault());
+            return View(_context.Products.Where(i => i.Id== id).FirstOrDefault());
         }
         public ActionResult List()
         {
@@ -49,6 +49,10 @@ namespace WebApplication3.Controllers
             }).ToList();
 
             return View(urunler);
+        }
+        public PartialViewResult GetCategories()
+        {
+            return PertialView(_context.Categories.ToList());
         }
     }
 }
