@@ -46,9 +46,14 @@ namespace WebApplication3.Controllers
                 CategoryId = i.CategoryId
 
 
-            }).AsQueryable();
+            }).AsQueryable(); // filtreleme ekleniyor
 
-            return View(urunler);
+            if(id != null)
+            {
+                urunler = urunler.Where(i => i.CategoryId == id); //list sayfasının  solundaki kategorilere tıkladığında filtreli gelmesini sağlıyor
+            }
+
+            return View(urunler.ToList());
         }
         public PartialViewResult GetCategories()
         {
