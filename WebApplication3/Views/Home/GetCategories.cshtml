@@ -1,26 +1,51 @@
 ﻿
 @model IEnumerable<WebApplication3.Entitiy.Category>
 
+@{var selectedCategory = Url.RequestContext.RouteData.Values["id"];
+}
 
 
 <ul class="list-group">
-    <li class="list-group-item">
-        <a href="/Home/List>
-            <i class="fas fa-chevron-double-right" style="font-size: 17px;"></i>
-            Tüm Kategoriler
 
-        </a>
-    </li>
-    
+    <a href="/Home/List"  class ="list-group-item ">
+        <i class="fas fa-chevron-double-right"  style="font-size: 17px;"></i>
+        Kategoriler
+    </a>
+
+
     @foreach (var item in Model)
     {
-        <li class="list-group-item">
-            <a href="/Home/List/@item.Id">
+        if (selectedCategory != null)
+        {
+            if (item.Id == int.Parse(selectedCategory.ToString())) // soldaki bardan seçilen kategoriyi mavi renkli yapıyoruz
+            {
+                //seçilen kategori ile route id si birbirine eşit
+
+                <a href="/Home/List/@item.Id" class="list-group-item active">
+                    <i class="fas fa-chevron-double-right" style="font-size: 17px;"></i>
+                    @item.Name
+                </a>
+
+            }
+            else
+            {
+                <a href="/Home/List/@item.Id" class="list-group-item">
+                    <i class="fas fa-chevron-double-right" style="font-size: 17px;"></i>
+                    @item.Name
+                </a>
+
+
+            }
+        }
+        else
+        {
+            <a href="/Home/List/@item.Id" class="list-group-item">
                 <i class="fas fa-chevron-double-right" style="font-size: 17px;"></i>
                 @item.Name
             </a>
-        </li>
+
+        }
     }
-    
-    
+
+
 </ul>

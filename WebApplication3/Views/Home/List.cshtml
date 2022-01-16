@@ -15,8 +15,15 @@
             @if (Model.Count() == 0)
             {
                 <div class="alert alert-warning" role="alert">
-                    <i class="fas fa-exclamation-triangle" style="font-size: 25px;"></i>
+                    <i class="fas fa-exclamation-triangle" ></i>
                     Bu kategoride Ürün bulunmamaktadır!!
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-warning" role="alert">
+                    <i class="fas fa-check-square" ></i>
+                    <strong> @Model.Count() adet</strong>  ürün bulundu.
                 </div>
             }
 
