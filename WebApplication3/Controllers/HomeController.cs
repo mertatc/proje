@@ -29,11 +29,11 @@ namespace WebApplication3.Controllers
 
             return View(urunler);
         }
-        public ActionResult Details(int id)
+        public ActionResult Details(int? id)
         {
             return View(_context.Products.Where(i => i.Id== id).FirstOrDefault());
         }
-        public ActionResult List()
+        public ActionResult List(int? id) 
         {
             var urunler = _context.Products.Where(i => i.IsApproved).Select(i => new ProductModel()
             {
@@ -46,7 +46,7 @@ namespace WebApplication3.Controllers
                 CategoryId = i.CategoryId
 
 
-            }).ToList();
+            }).AsQueryable();
 
             return View(urunler);
         }
