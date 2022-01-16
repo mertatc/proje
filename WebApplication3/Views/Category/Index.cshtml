@@ -7,9 +7,9 @@
     <h2>Kategori Listesi</h2>
 
     <p>
-        @Html.ActionLink("Yeni Kategori", "Create")
+        @Html.ActionLink("Yeni Kategori", "Create",null,new {@class ="btn btn-primary" })
     </p>
-    <table class="table">
+    <table class="table table-bordered table-striped">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Name)
