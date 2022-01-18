@@ -21,7 +21,7 @@ namespace WebApplication3.Controllers
                 Description = i.Description.Length>50?i.Description.Substring(0,47)+"...":i.Description,
                 Price =i.Price,
                 Stock =i.Stock,
-                //Image = i.Image
+                Image = i.Image,
                 CategoryId =i.CategoryId
 
 
@@ -42,7 +42,7 @@ namespace WebApplication3.Controllers
                 Description = i.Description.Length > 50 ? i.Description.Substring(0, 47) + "..." : i.Description,
                 Price = i.Price,
                 Stock = i.Stock,
-                //Image = i.Image==null?"1.jpg":i.Image ,          //OLMAYAN RESİMLERE 1.JPG ATANIR
+                Image = i.Image==null?"1.jpg":i.Image ,          //OLMAYAN RESİMLERE 1.JPG ATANIR
                 CategoryId = i.CategoryId
 
 

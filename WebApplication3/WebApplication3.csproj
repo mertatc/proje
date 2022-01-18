@@ -208,6 +208,8 @@
     <Content Include="Global.asax" />
     <Content Include="theme\css\style.css" />
     <Content Include="theme\home.html" />
+    <Content Include="theme\img\1.jpg" />
+    <Content Include="theme\img\2.jpg" />
     <Content Include="theme\img\bg.jpg" />
     <Content Include="theme\img\camera.jpg" />
     <Content Include="theme\js\holder.min.js" />
@@ -218,6 +220,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Entitiy\Category.cs" />
     <Compile Include="Entitiy\DataContext.cs" />
     <Compile Include="Entitiy\DataInitializer.cs" />
@@ -246,6 +249,11 @@
     <Content Include="Views\Category\Details.cshtml" />
     <Content Include="Views\Category\Edit.cshtml" />
     <Content Include="Views\Category\Index.cshtml" />
+    <Content Include="Views\Product\Create.cshtml" />
+    <Content Include="Views\Product\Delete.cshtml" />
+    <Content Include="Views\Product\Details.cshtml" />
+    <Content Include="Views\Product\Edit.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
