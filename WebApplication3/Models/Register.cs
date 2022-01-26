@@ -15,6 +15,9 @@ namespace WebApplication3.Models
         [DisplayName("Sayadınız")]
         public string SurName { get; set; }
         [Required]
+        [DisplayName("Kullanıcıadı")]
+        public string UserName { get; set; }
+        [Required]
         [DisplayName("Eposta")]
         [EmailAddress(ErrorMessage ="Eposta adresininzi düzgün giriniz.")]
         public string Email { get; set; }
