@@ -1,11 +1,21 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
 namespace WebApplication3.Identity
 {
-    public class ApplicationRole
+    public class ApplicationRole:IdentityRole
     {
+        public string Description { get; set; }
+        public ApplicationRole()
+        {
+
+        }
+        public ApplicationRole(string rolename, string description)
+        {
+            this.Description = description;
+        }
     }
 }
