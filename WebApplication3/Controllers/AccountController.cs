@@ -97,5 +97,11 @@ namespace WebApplication3.Controllers
             }
             return View();
         }
+        public ActionResult Logout()
+        {
+            var authManager = HttpContext.GetOwinContext().Authentication;
+            authManager.SignOut();
+            return RedirectToAction("Index","Home");
+        }
     }
 }
