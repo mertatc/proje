@@ -10,7 +10,7 @@ namespace WebApplication3.Entitiy
     {
         public DataContext() : base("dataConnection")
         {
-            Database.SetInitializer(new DataInitializer());
+           
         }
 
         public DbSet<Product> Products { get; set; }
