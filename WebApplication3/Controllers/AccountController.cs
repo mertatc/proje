@@ -85,8 +85,13 @@ namespace WebApplication3.Controllers
                     var identityclaims = UserManager.CreateIdentity(user, "ApplicationCookie");
                     var authProperties = new AuthenticationProperties();
                     authProperties.IsPersistent = model.RememberMe;
-
                     authManager.SignIn(authProperties, identityclaims);
+
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    ModelState.AddModelError("LoginUserError", "böyle bir kullanıcı yokç");
                 }
 
             }
