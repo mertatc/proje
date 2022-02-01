@@ -45,7 +45,16 @@ namespace WebApplication3.Controllers
                 if (result.Succeeded)
                 {
                     //kullanıcı oluştu ve kullanıcıyı bir role atayabilrisniz
-                    //RoleManager.AddToRole(user.Id, "User");
+                    if(RoleManager.RoleExists("User"))
+                    {
+                        UserManager.AddToRole(user.Id, "User");
+                    }
+                    return RedirectToAction("Login", "Account");
+
+                }
+                else
+                {
+                    ModelState.AddModelError("RegisterUserError", "kullanıcı oluşturma hatası");
                 }
 
             }
