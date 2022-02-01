@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.Owin.Security;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -55,6 +56,37 @@ namespace WebApplication3.Controllers
                 else
                 {
                     ModelState.AddModelError("RegisterUserError", "kullanıcı oluşturma hatası");
+                }
+
+            }
+            return View();
+        }
+
+
+
+        public ActionResult Login()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Login(Login model)
+        {
+            if (ModelState.IsValid)
+            {
+                //Login işlemleri
+                var user = UserManager.Find(model.UserName, model.Password);
+                if(user != null)
+                {
+                    //varolan kullanıcıyı sisteme dahil et.
+                    // applicationCookie oluştrup sisteme bırak
+
+                    var authManager = HttpContext.GetOwinContext().Authentication;
+                    var identityclaims = UserManager.CreateIdentity(user, "ApplicationCookie");
+                    var authProperties = new AuthenticationProperties();
+                    authProperties.IsPersistent = model.RememberMe;
+
+                    authManager.SignIn(authProperties, identityclaims);
                 }
 
             }
